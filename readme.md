@@ -2,7 +2,7 @@ git clone https://github.com/dimasadityamukhsinin/bacalah.git
 git branch "nama_branch"
 git checkout "nama_branch"
 
-!! LETAK STYLE DAN JS DIFOLDER YG DISEDIAKAN !!
+!! LETAK STYLE DAN JS DIFOLDER STYLE DAN JS !!
 
 TOKO BUKU
 - Dimas - Lead
