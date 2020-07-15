@@ -1,0 +1,305 @@
+
+body {
+    background-color: #f5f5f5;
+}
+
+#head {
+    background-color: white;
+}
+
+.logo-text {
+    font-family: 'Fredoka One', cursive;
+    color: #333333;
+    float: left;
+    font-size: 25px !important;
+    padding: 12px 20px;
+    text-decoration: none;
+}
+
+.logo {
+    font-family: 'Fredoka One', cursive;
+    color: #333333;
+    float: left;
+    font-size: 25px !important;
+    text-decoration: none;
+    
+}
+
+.bg-custom {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 6px -1px;
+}
+
+.bg-link {
+    color: #414141 !important;
+}
+
+.active {
+    font-weight: 700 !important;
+}
+
+.login {
+    border-color: #037ef3;
+    color: #037ef3;
+}
+
+.signup {
+    background-color: #037ef3 !important;
+    font-size: 16px !important;
+    margin-right: 36px;
+    font-weight: 500 !important;
+    color: white !important;
+}
+
+.btn-custom {
+    background-color: #037ef3 !important;
+}
+
+.header {
+    margin-top: 75px;
+}
+
+#map {
+    background-color: white;
+}
+
+.map-container-5{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+
+.map-container-5 iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.kategori h5{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.kategori p{
+    color: #037ef3;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.btn-category {
+    border: 1px solid rgb(229, 231, 233);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 6px -1px;
+}
+
+.previous{
+    background: rgba(0, 0, 0, 0) url("https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/f1c105ab.svg") no-repeat scroll center center / contain !important;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: no-repeat 50%/100% 100%;
+    background-image: none;
+}
+
+.next{
+    background: rgba(0, 0, 0, 0) url("https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/5d231550.svg") no-repeat scroll center center / contain;
+}
+
+.control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 15%;
+    color: #fff;
+    text-align: center;
+    opacity: .5;
+    transition: opacity .15s ease;
+}
+
+.control-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 15%;
+    color: #fff;
+    text-align: center;
+    opacity: .5;
+    transition: opacity .15s ease;
+}
+
+.penerbit {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: rgba(0,0,0,.54);
+}
+
+.judul {
+    font-weight: 700;
+    color: #414141;
+    font-size: 16px;
+}
+
+.promo {
+    margin-top: 15px;
+    font-style: italic;
+    color: #959595;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.price-promo {
+    min-height: 20px;
+}
+
+.discount {
+    background-color: #e8eaf6;
+    padding: 3.5px 5px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #414141;
+}
+
+.card {
+    border: none !important;
+}
+
+.card:hover {
+    box-shadow: 0 0 25px #dddddd;
+}
+
+.best-seller {
+    box-shadow: rgba(49, 53, 59, 0.12) 0px 1px 6px 0px;
+    border-radius: 12px;
+    background-color: white;
+}
+
+.subscribe {
+    background-color: white;
+    border-top: 4px solid #037ef3;
+}
+
+.dropdown a {
+    color: #414141;
+}
+
+.sub {
+    margin-left: 100px;
+}
+
+.sub form {
+    max-width: 855px;
+}
+
+.sub fieldset {
+    max-width: 680px;
+}
+
+.sub label {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.sub input {
+    margin: 10px 0;
+    height: 42px;
+    border: 1px solid #b4b4b4;
+    color: #9e9e9e;
+    font-size: 16px;
+    padding-left: 20px;
+    width: 550px;
+}
+
+.ikuti {
+    margin: 10px 0;
+    height: 42px;
+    border: 1px solid #037ef3;
+    background-color: #037ef3;
+    color: white;
+    font-size: 16px;
+    width: 100px;
+    font-weight: 700;
+}
+
+.follow {
+    margin-left: 200px;
+    font-size: 15px;
+}
+
+.follow h5 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.follow ul {
+    margin-left: -40px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.follow li {
+    padding-right: -15px;
+}
+
+.follow img {
+    padding-left: -20px;
+}
+
+.footer {
+    background-color: white;
+}
+
+.footer h5 {
+    color: black;
+    font-weight: 700;
+    margin-top: 40px;
+}
+
+.footer a {
+    color: black;
+    margin-top: 10px;
+}
+
+a:hover {
+    color: black;
+}
+
+.footer p {
+    font-weight: 700;
+}
+
+.footer img {
+    width: 48px;
+    height: 48px;
+}
+
+.item {
+    margin-top: 70px;
+}
+
+.isi-footer {
+    padding-bottom: 40px;
+}
