@@ -68,7 +68,7 @@ const allBooks = async(url) => {
             `<div class="col-md-3 ml-5 pb-4">
                  <div onclick="detail(event, ${element.id})" class="card" style="width: 18rem;">
                     <a href="">
-                        <img class="card-img-top" src="assets/image/${element.image}" alt="Card image cap">
+                        <img class="card-img-top" src="./assets/image/${element.image}" alt="Card image cap">
                     </a>
                     <div class="card-body">
                         <a href="">
