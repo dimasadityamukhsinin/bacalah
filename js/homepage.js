@@ -13,17 +13,17 @@ const bestSeller = async(url) => {
             document.getElementById('book').innerHTML += 
             `<div class="col-md-3 ml-5 pb-4">
                 <div class="card" style="width: 18rem;">
-                    <a href="">
+                    <a onclick="detail(event, ${element.id})">
                         <img class="card-img-top" src="assets/image/${element.image}" alt="Card image cap">
                     </a>
                     <div class="card-body">
-                        <a href="">
+                        <a onclick="detail(event, ${element.id})">
                             <div class="judul"> ${element.title} </div>
                         </a>
-                        <a href="">
+                        <a onclick="detail(event, ${element.id})">
                             <div class="penerbit"> ${element.author} </div>
                         </a>
-                        <a href="">
+                        <a onclick="detail(event, ${element.id})">
                             <div>
                                 <div class="price-promo d-flex align-items-center">
                                     <p class="promo mr-2">Rp. ${element.price.toLocaleString()}</p>
@@ -91,6 +91,14 @@ const cekLogin = () =>{
         `<a href="login.html" class="btn login rounded-sm">Login</a>`
     }
 }
+
+const detail = (event,id) => {
+    event.preventDefault();
+    localStorage.setItem('bookID', id)
+    window.location.replace('../detail.html');
+}
+
+
 
 cekLogin();
 
