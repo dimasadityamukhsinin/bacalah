@@ -75,7 +75,6 @@ const bestSeller = async(url) => {
 // }
 
 const cekLogin = () =>{
-    localStorage.setItem('hasLogin', true);
     let haslogin = localStorage.getItem('hasLogin');
     
     if(haslogin == "true") {
