@@ -7,8 +7,18 @@ function login(event) {
     let password2 = localStorage.getItem("password");
 
     if ( (email && password) == (email2 && password2) ) {
-        return window.location.replace('../index.html');
+        localStorage.setItem("hasLogin", true);
+        window.location.replace('../index.html');
     } else {
         return alert("Password atau Email Salah atau tidak terdaftar")
     }
 }
+
+const checkLogin = () => {
+    let hasLogin = localStorage.getItem('hasLogin');
+    if(hasLogin == "true") {
+        window.location.replace('../index.html');
+    }
+}
+
+checkLogin();
