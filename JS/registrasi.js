@@ -12,6 +12,7 @@ function register(event) {
         localStorage.setItem("email", email);
         localStorage.setItem("password", password);
         localStorage.setItem("username", username);
+        localStorage.setItem("hasLogin", true);
         window.location.replace('../index.html');
     } else {
         alert("Data Tidak boleh kosong")
