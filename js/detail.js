@@ -33,7 +33,7 @@ const getByID = async (event, id) => {
     localStorage.setItem('buyNow', JSON.stringify(data))
 
    alert('add success')
-   document.getBookByID('updateCart').innerHTML = data.count
+   document.getElementById('updateCart').innerHTML = data.count
     // karena buynow user seharusnya langsung di redirect ke halaman checkout untuk checkout
     window.location.replace('./checkout.html')
 }
