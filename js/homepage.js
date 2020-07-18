@@ -97,8 +97,6 @@ const detail = (event,id) => {
     window.location.replace('../detail.html');
 }
 
-
-
 cekLogin();
 
 bestSeller('https://5f0e7e8d704cdf0016eaf16a.mockapi.io/books');

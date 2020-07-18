@@ -296,7 +296,7 @@ a:hover {
 }
 
 .item {
-    margin-top: 70px;
+    margin-top: 25px;
 }
 
 .isi-footer {
@@ -319,6 +319,10 @@ a:hover {
     padding: 0;
     margin: 0;
     position: relative;
+}
+
+a {
+    cursor: pointer;
 }
 
 #myUL li a {

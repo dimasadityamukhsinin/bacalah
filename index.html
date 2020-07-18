@@ -23,21 +23,24 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-                    <a class="nav-link bg-link pr-5" href="#">Home</a>
+                    <a class="nav-link bg-link pr-5" href="index.html">Home</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link bg-link pr-5" href="buku.html">Buku</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Kategori
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Programming</a>
-                        <a class="dropdown-item" href="#">Sekolah</a>
-                        <a class="dropdown-item" href="#">Self Development</a>
+                        <a class="dropdown-item" href="programming.html">Programming</a>
+                        <a class="dropdown-item" href="sekolah.html">Sekolah</a>
+                        <a class="dropdown-item" href="selfDevelopment.html">Self Development</a>
                     </div>
                 </li>
             </ul>
             <div class="navbar-nav">
-                <a href="#" class="mr-3" style="color: #414141">
+                <a onclick="cart(event)" class="mr-3" style="color: #414141">
                     <i class="fas fa-shopping-bag fa-2x"></i>
                     <!-- <span style="padding-top: 100px;">1</span> -->
                 </a>
@@ -171,7 +174,7 @@
                     </div>
                 </div>
                 <div class="column d-flex flex-column item mr-5">
-                    <p style="margin-top: 10px;">Pengiriman</p>
+                    <p>Pengiriman</p>
                     <div class="column ml-3">
                         <div class="row">
                             <img src="assets/image/shipping-grab.png" alt="Grab">
