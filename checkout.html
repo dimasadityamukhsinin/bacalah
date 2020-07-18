@@ -37,17 +37,20 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="programming.html">Programming</a>
                             <a class="dropdown-item" href="education.html">Sekolah</a>
-                            <a class="dropdown-item" href="selfDevelopment.html">Self Development</a>
+                            <a class="dropdown-item" href="selfdevelopment.html">Self Development</a>
                         </div>
                     </li>
                 </ul>
                 <div class="navbar-nav">
                     <a href="checkout.html" class="mr-3" style="color: #414141">
-                        <i class="fas fa-shopping-bag fa-2x"></i><span class=" ml-1 rounded-pill" id="updateCart"></span>
+                        <i class="fas fa-shopping-bag fa-2x " id="updateCart"></i>
                     </a>
                     <div id="log">
                         <a href="profile.html" class="mr-3" style="color: #414141">
                             <i class="fas fa-user-circle fa-2x"></i>
+                        </a>
+                        <a href="logout.html" class="mr-3" style="color: #414141">
+                            <i class="fas fa-sign-out-alt fa-2x"></i>
                         </a>
                     </div>
                 </div>
@@ -55,20 +58,12 @@
         </nav>
 
         <!-- Hapus Buku -->
-        <div class="hapusBuku" style="margin-top: 80px;">
-            <div class="col-sm-2 rounded" style="background-color: white;padding-left: 5px; width: 150px;padding-top: 5px;padding-bottom: 5px;">
-                <a class="d-flex align-items-center" onclick="hapusBuku(event)">
-                    <i class="far fa-times-circle fa-2x pr-1"></i>
-                    <span style="font-weight: 700;">Hapus Buku</span>
-                </a>
-            </div>
+        <div class="hapusBuku" style="margin-top: 80px;" id="hapusBuku">
         </div>
 
         <!-- Data Buku yang dibeli -->
         <div class="beliBuku">
-            <div class="row col-lg-12">
-                <div class="card col-lg-12" id="beliBuku">
-                </div>
+            <div class="row col-lg-12" id="beliBuku">
             </div>
         </div>
 
@@ -172,34 +167,26 @@
                                 <div class="form-row">
                                     <div class="col-md-6">
                                         <label for="validationDefault01">* Nomor Kartu</label>
-                                        <input type="number" class="form-control" id="validationDefault01">
+                                        <input type="number" class="form-control" id="validationDefault01" required>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="validationDefault02">* Nama Pemilik Kartu</label>
-                                        <input type="text" class="form-control" id="validationDefault02">
+                                        <input type="text" class="form-control" id="validationDefault02" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-6">
                                         <label for="validationDefault03">* Masa Berlaku</label>
-                                        <input type="text" class="form-control" id="validationDefault03" required>
+                                        <input type="date" class="form-control" id="validationDefault03" required>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="validationDefault03">* CVV</label>
                                         <input type="text" class="form-control" id="validationDefault04" required>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                                        <label class="form-check-label" for="invalidCheck2">
-                                            Simpan Kartu
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary" type="submit">Konfirmasi Pesanan</button>
-                                    Total Belanja =<span id="totalBelanja1"></span>
+                                <div class="d-flex justify-content-between mt-4">
+                                    <a onclick="konfirmasiBayar1()" class="btn btn-primary" style="color: white;">Konfirmasi Pesanan</a>
+                                    <span id="totalBelanja1" style="background-color: #ff4c4c; color: white; font-weight: 700;" class="pt-1 pb-1 pl-2 pr-2 rounded"></span>
                                 </div>
                             </form>
                         </div>
@@ -207,32 +194,31 @@
                             <div class="d-flex justify-content-center">
                                 <p class="desc-cod">Anda dapat membayar secara tunai pada saat Anda menerima barang ditempat</p>
                             </div>
-                            <div class="d-flex justify-content-center">
-                                Total Belanja =<span id="totalBelanja2"></span>
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <button class="btn btn-primary" type="submit">Konfirmasi Pesanan</button>
+                            <div class="d-flex justify-content-between mt-2">
+                                <a onclick="konfirmasiBayar1()" class="btn btn-primary" style="color: white;">Konfirmasi Pesanan</a>
+                                <span id="totalBelanja2" style="background-color: #ff4c4c; color: white; font-weight: 700;" class="pt-1 pb-1 pl-2 pr-2 rounded"></span>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                             <div class="mb-3 mt-2">
-                                <div>
-                                    Total Belanja =<span id="totalBelanja3"></span>
-                                </div>
                                 <div class="mb-3 m-t-2">
-                                    <button type="button" class="btn btn-outline-primary col-sm-12">
+                                    <a onclick="konfirmasiBayar2()" class="btn btn-outline-primary col-sm-12" style="color: white;">
                                         <img class="checkbox-list" src="https://laz-img-cdn.alicdn.com/tfs/TB1o_HWo2DH8KJjy1XcXXcpdXXa-80-80.png">BCA
-                                    </button>
+                                    </a>
                                 </div>
                                 <div class="mb-3 mt-2">
-                                    <button type="button" class="btn btn-outline-primary col-sm-12">
+                                    <a onclick="konfirmasiBayar2()" class="btn btn-outline-primary col-sm-12" style="color: white;">
                                         <img class="checkbox-list" src="https://laz-img-cdn.alicdn.com/tfs/TB1oTHWo2DH8KJjy1XcXXcpdXXa-80-80.png">Mandiri
-                                    </button>
+                                    </a>
                                 </div>
                                 <div class="mb-3 mt-2">
-                                    <button type="button" class="btn btn-outline-primary col-sm-12">
+                                    <a onclick="konfirmasiBayar2()" class="btn btn-outline-primary col-sm-12" style="color: white;">
                                         <img class="checkbox-list" src="https://laz-img-cdn.alicdn.com/tfs/TB1pTHWo2DH8KJjy1XcXXcpdXXa-80-80.png">BNI
-                                    </button>
+                                    </a>
+                                </div>
+
+                                <div style="background-color: #ff4c4c;" class="pt-1 pb-1 pl-2 rounded">
+                                    <span id="totalBelanja3" style="color: white; font-weight: 700;"></span>
                                 </div>
                             </div>
                         </div>
@@ -283,6 +269,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

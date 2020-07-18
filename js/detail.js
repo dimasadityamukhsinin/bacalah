@@ -109,7 +109,7 @@ const getBookByID = async (id) => {
 					</div>
                 <Br>
                 <div class="card border-dark">
-                    <a onclick="getByID(event, ${result.id})" class="btn btn-primary">Beli Sekarang</a>
+                    <a onclick="getByID(event, ${result.id})" class="btn btn-primary" style="color: white;">Beli Sekarang</a>
                 </div>
                 <br>                            
            </div>
@@ -129,20 +129,34 @@ const getBookByID = async (id) => {
 getBookByID(bookID)
 
 
-// let listbook = '';
+const cekLogin = () =>{
+    let haslogin = localStorage.getItem('hasLogin');
+    
+    if(haslogin == "true") {
+        return document.getElementById('log').innerHTML = 
+        `<a href="profile.html" class="mr-3" style="color: #414141">
+            <i class="far fa-user-circle fa-2x"></i>
+        </a>
+        <a href="logout.html" class="mr-3" style="color: #414141">
+            <i class="fas fa-sign-out-alt fa-2x"></i>
+        </a>`
+    }else if(haslogin == "false"){
+        return document.getElementById('log').innerHTML = 
+        `<a href="login.html" class="btn login rounded-sm">Login</a>`
+    }
+}
 
-// const allBooks = async(url) => {
-//     let response = await fetch(url, {
-//         method: "GET",
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     });
-//     let test = await response.json();
-//     test.forEach(element => {
-//         listbook = element;
-//     });
-// }
+const renderCart = () => {
+    let storage = JSON.parse(localStorage.getItem('buyNow'));
+    let haslogin = localStorage.getItem('hasLogin');
 
-// allBooks('https://5f0e7e8d704cdf0016eaf16a.mockapi.io/books');
-// console.log(listbook);
+    if(haslogin == "true" && storage.status == "checkout") {
+        if(storage.count != null) {
+            document.getElementById('updateCart').innerHTML = 
+            `<span class=" ml-1 rounded-pill updateCart">${storage.count}</span>`
+        }
+    }
+}
+
+cekLogin();
+renderCart();

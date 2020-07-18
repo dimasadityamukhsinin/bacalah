@@ -113,6 +113,14 @@ a:hover {
     text-decoration: none !important;
 }
 
+.updateCart {
+    text-decoration: none;
+    background-color: #ff4c4c;
+    padding: 4px 6px;
+    font-size: 11px;
+    color: white;
+}
+
 @media (max-width: 575.98px) {
     .bagian-footer {
         display: flex!important;
