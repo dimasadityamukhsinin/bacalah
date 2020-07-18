@@ -81,6 +81,9 @@ const cekLogin = () =>{
         return document.getElementById('log').innerHTML = 
         `<a href="profile.html" class="mr-3" style="color: #414141">
             <i class="far fa-user-circle fa-2x"></i>
+        </a>
+        <a href="logout.html" class="mr-3" style="color: #414141">
+            <i class="fas fa-sign-out-alt fa-2x"></i>
         </a>`
     }else if(haslogin == null){
         return document.getElementById('log').innerHTML = 
