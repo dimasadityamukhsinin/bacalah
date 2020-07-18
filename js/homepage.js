@@ -75,7 +75,6 @@ const bestSeller = async(url) => {
 // }
 
 const cekLogin = () =>{
-    localStorage.setItem('hasLogin', true);
     let haslogin = localStorage.getItem('hasLogin');
     
     if(haslogin == "true") {
@@ -100,6 +99,51 @@ const detail = (event,id) => {
 
 
 
+// let dataBook = localStorage.getItem("dataBook");
+// let test = JSON.parse(dataBook);
+// test.forEach(element => {
+//     console.log(element.title);
+// });
+
+// let data = [];
+// const beliSekarang = () => {
+//     data = [{
+//         id      :   1,
+//         title   :   "Beginning Programming All-in-One Desk Reference For Dummies 1st Edition",
+//         author  :   "By Wallace Wang",
+//         price   :	398860,
+//         image   :	"1begining programming for dummies wallace wang.jpg",
+//         jumlah  : 2
+//     }]
+
+//     localStorage.setItem('buyBook', JSON.stringify(data));
+// }
+
+let tes = 
+    {
+        id      :   3,
+        title	:   "Learn Any Programming Language in 2 Hours",
+        author	:   "Copper Alvin",
+        price	:   398860,
+        image	:   "2computer programming by cooper alvin.jpg",
+        jumlah  : 3,
+    }
+
+const whistlsit = () => {
+    let cart = JSON.parse(localStorage.getItem('buyBook'));
+    let cart2 = JSON.parse(localStorage.getItem('buyBook'));
+    // cart.push(tes);
+    cart.jumlah = 2;
+    
+    console.log(cart);
+
+    localStorage.setItem('buyBook', JSON.stringify(cart));
+}
+
+whistlsit();
+beliSekarang();
+
+console.log(localStorage.getItem('buyBook'));
 cekLogin();
 
 bestSeller('https://5f0e7e8d704cdf0016eaf16a.mockapi.io/books');
