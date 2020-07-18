@@ -4,37 +4,40 @@
 // document.getElementById('welcome').innerHTML = text
 
 var bookID = localStorage.getItem('bookID')
-const beliSekarang = async(event, id) => {
+const getByID = async (event, id) => {
+    // ambil data api/books/id sesuai dengan yg di klik
     event.preventDefault()
-    let data = await fetch(`https://5f0e7e8d704cdf0016eaf16a.mockapi.io/books/${id}`)
-    let result = await data.json()
-    let jumlahBarang = document.getElementById("jumlah").value;
-    let text = ""
-    let allRes = {
-        count: jumlahBarang,
-        ...result
+    let endPoint = `https://5f0e7e8d704cdf0016eaf16a.mockapi.io/books/${id}`;
+    let response = await fetch(endPoint)
+    let result = await response.json();
+    // buat localstorage untuk buy now
+    let buyNowStorage = JSON.parse(localStorage.getItem('buyNow'));
+    if(buyNowStorage == null){
+        buyNow = []
     }
-    let cart = JSON.parse(localStorage.getItem('jumlahBarang' || []))
-    
-    
-    localStorage.setItem("jumlahBarang",JSON.stringify(cart));
-    window.alert('berhasil')
-    
+    // jumlah item yg akan di buy now
+    let jumlahBarang = document.getElementById('jumlahBarang').value; 
+    // rumus sesuai diskonan
+    let price = result.price * (20/ 100);
+    price = result.price - price;
+    // simpan semua data yang dibutuhkan di halaman checkout
+    let data = {
+        id: bookID,
+        count: jumlahBarang,
+        price: price,
+        totalPrice: parseInt(jumlahBarang) * parseInt(price),
+        name: result.title,
+        img: result.image,
+    }
+    // set data yg dibutuhkan kedalam localstorage buynow
+    localStorage.setItem('buyNow', JSON.stringify(data))
 
-    console.log(cart);
-    text += `${cart.count}`
-
-    document.getElementById('updateCart').innerHTML =text
-    
-
+   alert('add success')
+   document.getBookByID('updateCart').innerHTML = data.count
+    // karena buynow user seharusnya langsung di redirect ke halaman checkout untuk checkout
+    window.location.replace('./checkout.html')
 }
-const getCart = () => {
-    let text =""
-    let cart = JSON.parse(localStorage.getItem('jumlahBarang' || []))
-    text += `${cart.count}`
-    document.getElementById('updateCart').innerHTML =text
 
-}
 // get data id
 
 const getBookByID = async (id) => {
@@ -93,11 +96,11 @@ const getBookByID = async (id) => {
                 <br>
                 <div class="form-group">
 						<label class="control-label">Jumlah:</label>
-						<input id="jumlah" class="form-control" type="number" value="1" min="1" max="10" />
+						<input id="jumlahBarang" class="form-control" type="number" value="1" min="1" max="10" />
 					</div>
                 <Br>
                 <div class="card border-dark">
-                    <a onclick="beliSekarang(event, ${result.id})" class="btn btn-primary">Beli Sekarang</a>
+                    <a onclick="getByID(event, ${result.id})" class="btn btn-primary">Beli Sekarang</a>
                 </div>
                 <br>
                 <div class="card border-dark">
