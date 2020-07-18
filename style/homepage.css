@@ -340,6 +340,14 @@ a {
     background-color: #eee;
 }
 
+.updateCart {
+    text-decoration: none;
+    background-color: #ff4c4c;
+    padding: 4px 6px;
+    font-size: 11px;
+    color: white;
+}
+
 @media only screen and (max-width: 767px) {
     .btn-category {
         border: 1px solid rgb(229, 231, 233);

@@ -147,3 +147,11 @@ input{
     font-weight: 700;
     margin: 20px;
 }
+
+.updateCart {
+    text-decoration: none;
+    background-color: #ff4c4c;
+    padding: 4px 6px;
+    font-size: 11px;
+    color: white;
+}

@@ -12,7 +12,7 @@ const bestSeller = async(url) => {
         if(element.bestSeller == true) {
             document.getElementById('bestseller').innerHTML += 
             `<div class="col-md-3 ml-5 pb-4">
-                <div class="card" style="width: 18rem;">
+                <div onclick="detail(event, ${element.id})" class="card" style="width: 18rem;">
                     <a href="">
                         <img class="card-img-top" src="assets/image/${element.image}" alt="Card image cap">
                     </a>
@@ -46,7 +46,7 @@ const detail = (event,id) => {
     window.location.replace('detail.html')
 }
 
-const cekLogin = () => {
+const cekLogin = () =>{
     let haslogin = localStorage.getItem('hasLogin');
     
     if(haslogin == "true") {
@@ -57,14 +57,24 @@ const cekLogin = () => {
         <a href="logout.html" class="mr-3" style="color: #414141">
             <i class="fas fa-sign-out-alt fa-2x"></i>
         </a>`
-    }else if(haslogin == null){
-        return document.getElementById('log').innerHTML = 
-        `<a href="login.html" class="btn login rounded-sm">Login</a>`
-    }else {
+    }else if(haslogin == "false"){
         return document.getElementById('log').innerHTML = 
         `<a href="login.html" class="btn login rounded-sm">Login</a>`
     }
 }
 
+const renderCart = () => {
+    let storage = JSON.parse(localStorage.getItem('buyNow'));
+    let haslogin = localStorage.getItem('hasLogin');
+
+    if(haslogin == "true") {
+        if(storage.count != null && storage.status == "checkout") {
+            document.getElementById('updateCart').innerHTML = 
+            `<span class=" ml-1 rounded-pill updateCart">${storage.count}</span>`
+        }
+    }
+}
+
 cekLogin();
 bestSeller('https://5f0e7e8d704cdf0016eaf16a.mockapi.io/books');
+renderCart();
