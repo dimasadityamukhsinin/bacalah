@@ -6,36 +6,45 @@
 var bookID = localStorage.getItem('bookID')
 const getByID = async (event, id) => {
     // ambil data api/books/id sesuai dengan yg di klik
-    event.preventDefault()
-    let endPoint = `https://5f0e7e8d704cdf0016eaf16a.mockapi.io/books/${id}`;
-    let response = await fetch(endPoint)
-    let result = await response.json();
-    // buat localstorage untuk buy now
-    let buyNowStorage = JSON.parse(localStorage.getItem('buyNow'));
-    if(buyNowStorage == null){
-        buyNow = []
-    }
-    // jumlah item yg akan di buy now
-    let jumlahBarang = document.getElementById('jumlahBarang').value; 
-    // rumus sesuai diskonan
-    let price = result.price * (20/ 100);
-    price = result.price - price;
-    // simpan semua data yang dibutuhkan di halaman checkout
-    let data = {
-        id: bookID,
-        count: jumlahBarang,
-        price: price,
-        totalPrice: parseInt(jumlahBarang) * parseInt(price),
-        name: result.title,
-        img: result.image,
-    }
-    // set data yg dibutuhkan kedalam localstorage buynow
-    localStorage.setItem('buyNow', JSON.stringify(data))
+    event.preventDefault();
+    let hasLogin = localStorage.getItem('hasLogin');
+    if(hasLogin == "true") {
+        let endPoint = `https://5f0e7e8d704cdf0016eaf16a.mockapi.io/books/${id}`;
+        let response = await fetch(endPoint)
+        let result = await response.json();
+        // buat localstorage untuk buy now
+        let buyNowStorage = JSON.parse(localStorage.getItem('buyNow'));
+        if(buyNowStorage == null){
+            buyNow = []
+        }
+        // jumlah item yg akan di buy now
+        let jumlahBarang = document.getElementById('jumlahBarang').value; 
+        // rumus sesuai diskonan
+        let price = result.price * (20/ 100);
+        price = result.price - price;
+        // simpan semua data yang dibutuhkan di halaman checkout
+        let data = {
+            id: bookID,
+            count: jumlahBarang,
+            price: price,
+            totalPrice: parseInt(jumlahBarang) * parseInt(price),
+            name: result.title,
+            img: result.image,
+            status: "checkout",
+        }
+        // set data yg dibutuhkan kedalam localstorage buynow
+        localStorage.setItem('buyNow', JSON.stringify(data));
+        document.getElementById('updateCart').innerHTML = data.count;
 
-   alert('add success')
-   document.getElementById('updateCart').innerHTML = data.count
-    // karena buynow user seharusnya langsung di redirect ke halaman checkout untuk checkout
-    window.location.replace('./checkout.html')
+
+        // karena buynow user seharusnya langsung di redirect ke halaman checkout untuk checkout
+        swal("Berhasil!", "Buku Telah Ditambahkan!", "success")
+            .then((value) => {
+                window.location.replace('../checkout.html');
+            });
+    }else {
+        window.location.replace('../login.html');
+    }
 }
 
 // get data id
@@ -49,7 +58,7 @@ const getBookByID = async (id) => {
     price = result.price - price;
     console.log(result);
     let text = `
-    <div class="row">
+    <div class="row pb-4">
     <div class="col-md-3">
         <div class="card" style="max-width: 14rem;">
             <img src="assets/image/${result.image}" class="card-img-top" alt="image">
@@ -102,10 +111,7 @@ const getBookByID = async (id) => {
                 <div class="card border-dark">
                     <a onclick="getByID(event, ${result.id})" class="btn btn-primary">Beli Sekarang</a>
                 </div>
-                <br>
-                <div class="card border-dark">
-                    <a href="#" class="btn btn-outline-secondary ">Tambah Whistlist</a>
-                </div>                               
+                <br>                            
            </div>
         </div>
         

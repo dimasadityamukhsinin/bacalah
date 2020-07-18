@@ -45,4 +45,26 @@ const detail = (event,id) => {
     localStorage.setItem('bookID', id)
     window.location.replace('detail.html')
 }
+
+const cekLogin = () => {
+    let haslogin = localStorage.getItem('hasLogin');
+    
+    if(haslogin == "true") {
+        return document.getElementById('log').innerHTML = 
+        `<a href="profile.html" class="mr-3" style="color: #414141">
+            <i class="far fa-user-circle fa-2x"></i>
+        </a>
+        <a href="logout.html" class="mr-3" style="color: #414141">
+            <i class="fas fa-sign-out-alt fa-2x"></i>
+        </a>`
+    }else if(haslogin == null){
+        return document.getElementById('log').innerHTML = 
+        `<a href="login.html" class="btn login rounded-sm">Login</a>`
+    }else {
+        return document.getElementById('log').innerHTML = 
+        `<a href="login.html" class="btn login rounded-sm">Login</a>`
+    }
+}
+
+cekLogin();
 bestSeller('https://5f0e7e8d704cdf0016eaf16a.mockapi.io/books');

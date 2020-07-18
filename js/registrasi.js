@@ -18,3 +18,12 @@ function register(event) {
         alert("Data Tidak boleh kosong")
     }
 }
+
+const checkLogin = () => {
+    let hasLogin = localStorage.getItem('hasLogin');
+    if(hasLogin == "true") {
+        window.location.replace('../index.html');
+    }
+}
+
+checkLogin();
