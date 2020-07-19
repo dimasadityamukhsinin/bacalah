@@ -12,9 +12,15 @@ function tes(){
 const tes2 = () => {
     setInterval(function(){ 
         let riwayat = JSON.parse(localStorage.getItem('riwayat'));
-        riwayat.push(storage);
-        localStorage.setItem('riwayat', JSON.stringify(riwayat));
-        localStorage.setItem('buyNow', null);
+        if(!riwayat){
+            riwayat.push(storage);
+            localStorage.setItem('riwayat', JSON.stringify(riwayat));
+        } else {
+            riwayat = JSON.parse(localStorage.getItem('riwayat'))
+            riwayat.push(storage)
+            localStorage.setItem('riwayat', JSON.stringify(riwayat))
+            localStorage.setItem('buyNow', null);
+        }
         window.location.replace('../profile.html');
     }, 3000);
 }
