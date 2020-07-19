@@ -1,10 +1,21 @@
 let storage = JSON.parse(localStorage.getItem('buyNow'));
 
-setInterval(function(){ 
-    storage.status = "riwayat";
-    tgl = new Date();
-    tgl.toDateString();
+function tes(){ 
+    let riwayat = JSON.parse(localStorage.getItem('riwayat'));
+    let arrriwayat = [];
+    if(riwayat == null) {
+        localStorage.setItem('riwayat', JSON.stringify(arrriwayat));
+    }
+    tes2();
+}
 
-    localStorage.setItem('buyNow', JSON.stringify(storage));
-    window.location.replace('../profile.html');
-}, 3000);
+const tes2 = () => {
+    setInterval(function(){ 
+        let riwayat = JSON.parse(localStorage.getItem('riwayat'));
+        riwayat.push(storage);
+        localStorage.setItem('riwayat', JSON.stringify(riwayat));
+        localStorage.setItem('buyNow', null);
+        window.location.replace('../profile.html');
+    }, 3000);
+}
+tes();

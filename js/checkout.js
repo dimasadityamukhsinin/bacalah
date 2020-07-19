@@ -2,7 +2,7 @@
 let storage = JSON.parse(localStorage.getItem('buyNow'));
 
 const renderCart = () => {
-    if(storage.count != null  && storage.status == "checkout") {
+    if(storage && storage.count != null) {
         document.getElementById('updateCart').innerHTML = 
         `<span class=" ml-1 rounded-pill updateCart">${storage.count}</span>`
     }
@@ -17,7 +17,7 @@ const cekLogin = () => {
 }
 
 const beliBuku = () => {
-    if(storage != null  && storage.status == "checkout") {
+    if(storage != null) {
         document.getElementById('beliBuku').innerHTML = 
         `<div class="card col-lg-12">
             <table class="table">

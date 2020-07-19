@@ -30,7 +30,6 @@ const getByID = async (event, id) => {
             totalPrice: parseInt(jumlahBarang) * parseInt(price),
             name: result.title,
             img: result.image,
-            status: "checkout",
         }
         // set data yg dibutuhkan kedalam localstorage buynow
         localStorage.setItem('buyNow', JSON.stringify(data));
@@ -140,7 +139,7 @@ const cekLogin = () =>{
         <a href="logout.html" class="mr-3" style="color: #414141">
             <i class="fas fa-sign-out-alt fa-2x"></i>
         </a>`
-    }else if(haslogin == "false"){
+    }else if(haslogin == "false" || haslogin == null){
         return document.getElementById('log').innerHTML = 
         `<a href="login.html" class="btn login rounded-sm">Login</a>`
     }
@@ -150,8 +149,8 @@ const renderCart = () => {
     let storage = JSON.parse(localStorage.getItem('buyNow'));
     let haslogin = localStorage.getItem('hasLogin');
 
-    if(haslogin == "true" && storage.status == "checkout") {
-        if(storage.count != null) {
+    if(haslogin == "true") {
+        if(storage && storage.count != null) {
             document.getElementById('updateCart').innerHTML = 
             `<span class=" ml-1 rounded-pill updateCart">${storage.count}</span>`
         }
