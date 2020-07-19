@@ -6,6 +6,11 @@ body {
     border: none !important;
 }
 
+a:hover {
+    color: black;
+    text-decoration: none !important;
+}
+
 /* .card:hover {
     box-shadow: 0 0 25px #dddddd;
 } */
@@ -82,6 +87,31 @@ body {
     background-color: white;
     padding-bottom: 20px;
 }
+
+.footer h5 {
+    color: black;
+    font-weight: 700;
+    margin-top: 40px;
+}
+
+.footer a {
+    color: black;
+    margin-top: 10px;
+}
+
+.footer p {
+    font-weight: 700;
+}
+
+.footer img {
+    width: 48px;
+    height: 48px;
+}
+
+.isi-footer {
+    padding-bottom: 40px;
+}
+
 .category{
         box-shadow: rgba(49, 53, 59, 0.12) 0px 1px 6px 0px;
         border-radius: 12px;
