@@ -80,30 +80,10 @@
                 <div class="d-flex justify-content-between kategori">
                     <h5 class="mb-3">Kategori</h5>
                 </div>
-                <div id="carouselExampleInterval" class="carousel slide" data-interval="false" height="1200px">
-                    <div class="carousel-inner d-flex align-items-center" style=" height: 50px;">
-                      <div class="carousel-item active" data-interval="10000" >
-                          <div class="d-flex justify-content-center" >
-                            <a href="programming.html" class="btn btn-category rounded-pill mr-2">Programming</a>
-                            <a href="education.html" class="btn btn-category rounded-pill mr-2">Education</a>
-                            <a href="selfdevelopment.html" class="btn btn-category rounded-pill mr-2">Self Development</a>
-                          </div>
-                      </div>
-                      <div class="carousel-item" data-interval="2000" id="data-2">
-                        <div class="d-flex justify-content-center">
-                        </div>
-                      </div>
-                      <div class="carousel-item"  data-interval="2000" id="data-3">
-                      </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-                        <img src="https://bookshop.org/assets/ic_fat_arrow_left-78d4b37e9bbb5fee5ded46062f2acb0558ea2c52e03e1d4cf00fe7c668c48dac.svg" aria-hidden="true">
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-                        <img src="https://bookshop.org/assets/ic_fat_arrow_right-8cd117ef71cad1e27c159d775f4d2d0a806c8f173deb5be52b4a6dacc7fdfa0d.svg" aria-hidden="true">
-                      <span class="sr-only">Next</span>
-                    </a>
+                <div class="d-flex justify-content-center" >
+                    <a href="programming.html" class="btn btn-category rounded-pill mr-2">Programming</a>
+                    <a href="education.html" class="btn btn-category rounded-pill mr-2">Education</a>
+                    <a href="selfdevelopment.html" class="btn btn-category rounded-pill mr-2">Self Development</a>
                 </div>
             </div>
         </header>
@@ -139,7 +119,7 @@
     </div>
     <div class="container-fluid mt-4 subscribe">
         <div class="d-flex pt-4 pb-4 sub justify-content-center">
-            <form action="">
+            <form>
                 <fieldset>
                     <label>Subscribe untuk mendapatkan berita terbaru dan penawaran terbaik dari kami!</label>
                 </fieldset>
@@ -148,7 +128,7 @@
                         <input type="email" placeholder="Masukkan Email Anda Disini">
                     </div>
                     <div class="float-right text-right ml-3 ">
-                        <button class="ikuti" type="submit"> IKUTI </button>
+                        <button onclick="subscribe(event)" class="ikuti" type="submit"> IKUTI </button>
                     </div>
                 </div>
             </form>
@@ -230,6 +210,7 @@
 </script>
 <!--End of Tawk.to Script-->
 <script src="js/homepage.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

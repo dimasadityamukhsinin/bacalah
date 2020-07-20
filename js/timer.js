@@ -1,8 +1,8 @@
 var timeoutHandle;
-function countdown(minutes, seconds) {
+function countdown(hours, minutes, seconds) {
     function tick() {
         var counter = document.getElementById("timer");
-        counter.innerHTML = minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+        counter.innerHTML = hours.toString() + ":" + minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
         seconds--;
         if (seconds >= 0) {
             timeoutHandle = setTimeout(tick, 1000);
@@ -10,12 +10,18 @@ function countdown(minutes, seconds) {
             if (minutes >= 1) {
                 // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
                 setTimeout(function () {
-                    countdown(minutes - 1, 59);
+                    countdown(0, minutes - 1, 59);
                 }, 1000);
+            }else {
+                if(hours >= 1) {
+                    setTimeout(function () {
+                        countdown(hours - 1, 59, 59);
+                    }, 1000);
+                }
             }
         }
     }
     tick();
 }
 
-countdown(60, 00);
+countdown(24, 00, 00);
