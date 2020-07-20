@@ -10,7 +10,7 @@ function login(event) {
         localStorage.setItem("hasLogin", true);
         window.location.replace('../index.html');
     } else {
-        return alert("Password atau Email Salah atau tidak terdaftar")
+        return swal("Peringatan!", "Password atau Email Salah atau tidak terdaftar!", "warning");
     }
 }
 

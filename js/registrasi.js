@@ -15,7 +15,7 @@ function register(event) {
         localStorage.setItem("hasLogin", true);
         window.location.replace('../index.html');
     } else {
-        alert("Data Tidak boleh kosong")
+        swal("Peringatan!", "Data tidak boleh kosong!", "warning");
     }
 }
 

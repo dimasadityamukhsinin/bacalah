@@ -16,6 +16,6 @@ const tes2 = () => {
         localStorage.setItem('riwayat', JSON.stringify(riwayat));
         localStorage.setItem('buyNow', null);
         window.location.replace('../profile.html');
-    }, 3000);
+    }, 5000);
 }
 tes();
