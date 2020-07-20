@@ -22,6 +22,6 @@ const tes2 = () => {
             localStorage.setItem('buyNow', null);
         }
         window.location.replace('../profile.html');
-    }, 3000);
+    }, 5000);
 }
 tes();

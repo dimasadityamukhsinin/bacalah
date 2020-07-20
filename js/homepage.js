@@ -41,39 +41,6 @@ const bestSeller = async(url) => {
     });
 }
 
-// let data = "";
-
-// async function myFunction() {
-//     let response = await fetch('https://5f0e7e8d704cdf0016eaf16a.mockapi.io/books', {
-//         method: "GET",
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     });
-//     let test = await response.json();
-
-//     input = document.getElementById("myInput");
-//     filter = input.value.toUpperCase();
-//     test.forEach(element => {
-//         return await element;
-//     });
-    
-//     // var input, filter, ul, li, a, i, txtValue;
-//     // input = document.getElementById("myInput");
-//     // filter = input.value.toUpperCase();
-//     // ul = document.getElementById("myUL");
-//     // li = ul.getElementsByTagName("li");
-//     // for (i = 0; i < li.length; i++) {
-//     //     a = li[i].getElementsByTagName("a")[0];
-//     //     txtValue = a.textContent || a.innerText;
-//     //     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//     //         li[i].style.display = "";
-//     //     } else {
-//     //         li[i].style.display = "none";
-//     //     }
-//     // }
-// }
-
 const cekLogin = () =>{
     let haslogin = localStorage.getItem('hasLogin');
     
