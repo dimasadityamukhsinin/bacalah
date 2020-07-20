@@ -76,6 +76,11 @@ const renderCart = () => {
     }
 }
 
+const subscribe = (event) => {
+    event.preventDefault();
+    swal("Berhasil!", "Terima kasih telah mengikuti kami!", "success");
+}
+
 cekLogin();
 renderCart();
 bestSeller('https://5f0e7e8d704cdf0016eaf16a.mockapi.io/books');
